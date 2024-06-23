@@ -1,0 +1,12 @@
+{
+  "name": "xstack",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "turbo": "turbo"
+  },
+  "dependencies": {
+    "turbo": "^2.0.4"
+  },
+  "packageManager": "pnpm@9.4.0"
+}
