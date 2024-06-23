@@ -2,9 +2,12 @@
 module.exports = {
   plugins: ['simple-import-sort'],
   rules: {
+    'no-void': 'off',
+
     'prettier/prettier': 'off',
-    import: 'off',
+
     export: 'off',
+    'import/order': 'off',
     'simple-import-sort/exports': 'warn',
   },
 };
