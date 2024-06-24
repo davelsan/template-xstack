@@ -6,7 +6,7 @@ import { createStyleSheet, useStyles } from 'react-native-unistyles';
 import type { IconProps } from '@expo/vector-icons/build/createIconSet';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function TabLayout() {
+export default function TabsLayout() {
   const { styles, theme } = useStyles(stylesheet);
   const os = Platform.OS === 'ios' ? 'ios' : 'android';
 
