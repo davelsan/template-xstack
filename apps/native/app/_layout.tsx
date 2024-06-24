@@ -2,7 +2,6 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { useColorScheme } from '@/hooks/useColorScheme';
 import {
   Nunito_300Light,
   Nunito_400Regular,
@@ -12,20 +11,15 @@ import {
   Nunito_900Black,
 } from '@expo-google-fonts/nunito';
 import { SpaceMono_400Regular } from '@expo-google-fonts/space-mono';
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from '@react-navigation/native';
+
+import { ThemeProvider } from '@theme/Provider';
 
 import 'react-native-reanimated';
-import '@theme/index';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     NunitoBlack: Nunito_900Black,
     NunitoBold: Nunito_700Bold,
@@ -47,7 +41,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
