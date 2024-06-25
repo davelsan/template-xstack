@@ -1,10 +1,11 @@
 import { Image, Platform, StyleSheet } from 'react-native';
-import { HelloWave } from '@/components/HelloWave';
 
 import { Heading } from '@typography/Heading';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
 import { Text } from '@ui/Text';
 import { ThemedView } from '@ui/ThemedView';
+
+import { HelloWave } from './HelloWave';
 
 export function HomeView() {
   return (
