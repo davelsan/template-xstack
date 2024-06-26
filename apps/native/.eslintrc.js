@@ -1,39 +1,6 @@
-/** @type {import("eslint").Linter.Config} */
+// https://docs.expo.dev/guides/using-eslint/
+// https://github.com/expo/expo/tree/main/packages/eslint-config-expo/utils
+// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
 module.exports = {
-  extends: ['xstack/native'],
-  ignorePatterns: ['./android', './ios'],
-  rules: {
-    'simple-import-sort/imports': [
-      'warn',
-      {
-        groups: [
-          // Module imports
-          ['^[a-z]', '^@'],
-          // Folder aliases
-          [
-            '^@features',
-            '^@helpers',
-            '^@hooks',
-            '^@state',
-            '^@typography',
-            '^@theme',
-            '^@ui',
-            '^@utils',
-          ],
-          // Folder imports (starting with `../` or `./`)
-          [
-            '^\\.\\.(?!/?$)',
-            '^\\.\\./?$',
-            '^\\./(?=.*/)(?!/?$)',
-            '^\\.(?!/?$)',
-            '^\\./?$',
-          ],
-          // Style and JSON imports
-          ['^.+\\.s?(css|json)$'],
-          // Side effect imports
-          ['^\\u0000'],
-        ],
-      },
-    ],
-  },
+  extends: ['expo', 'xstack/common'],
 };

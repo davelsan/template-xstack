@@ -1,13 +1,15 @@
+/* eslint-env node */
+
 // Learn more https://docs.expo.dev/guides/monorepos
 // Learn more https://docs.expo.io/guides/customizing-metro
-const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
+
+const { getDefaultConfig } = require('expo/metro-config');
 
 // Find the project and workspace directories
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../..');
 
-/** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(projectRoot, {
   // [Web-only]: Enables CSS support in Metro.
   isCSSEnabled: true,

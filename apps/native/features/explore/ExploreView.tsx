@@ -2,7 +2,7 @@ import { Image, Platform } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { Heading } from '@typography/Heading/Heading';
+import { Heading } from '@typography/Heading';
 import { Text } from '@typography/Text';
 import { TextMono } from '@typography/TextMono';
 import { TextSans } from '@typography/TextSans';

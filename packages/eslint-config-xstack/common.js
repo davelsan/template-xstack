@@ -1,13 +1,20 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  plugins: ['simple-import-sort'],
   rules: {
-    'no-void': 'off',
-
-    'prettier/prettier': 'off',
-
-    export: 'off',
-    'import/order': 'off',
-    'simple-import-sort/exports': 'warn',
+    'import/order': [
+      'warn',
+      {
+        'newlines-between': 'always',
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        pathGroups: [
+          {
+            pattern: '@*/**',
+            group: 'parent',
+            position: 'before',
+          },
+        ],
+        distinctGroup: true,
+      },
+    ],
   },
 };
