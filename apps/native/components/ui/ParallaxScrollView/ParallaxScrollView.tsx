@@ -1,13 +1,16 @@
 import type { PropsWithChildren, ReactElement } from 'react';
+import type { ViewStyle } from 'react-native';
 import Animated, {
   interpolate,
   useAnimatedRef,
   useAnimatedStyle,
   useScrollViewOffset,
 } from 'react-native-reanimated';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { useStyles } from 'react-native-unistyles';
 
 import { ThemedView } from '../ThemedView';
+
+import styleSheet from './ParallaxScrollView.css';
 
 const HEADER_HEIGHT = 250;
 
@@ -16,12 +19,12 @@ type Props = PropsWithChildren<{
 }>;
 
 export function ParallaxScrollView({ children, headerImage }: Props) {
-  const { styles } = useStyles(stylesheet);
+  const { styles } = useStyles(styleSheet);
 
   const scrollRef = useAnimatedRef<Animated.ScrollView>();
   const scrollOffset = useScrollViewOffset(scrollRef);
 
-  const headerAnimatedStyle = useAnimatedStyle(() => {
+  const headerAnimatedStyle = useAnimatedStyle((): ViewStyle => {
     return {
       transform: [
         {
@@ -53,20 +56,3 @@ export function ParallaxScrollView({ children, headerImage }: Props) {
     </ThemedView>
   );
 }
-
-const stylesheet = createStyleSheet((theme) => ({
-  container: {
-    flex: 1,
-  },
-  header: {
-    height: 250,
-    overflow: 'hidden',
-    backgroundColor: theme.colors.infoBgActive,
-  },
-  content: {
-    flex: 1,
-    padding: 32,
-    gap: 16,
-    overflow: 'hidden',
-  },
-}));

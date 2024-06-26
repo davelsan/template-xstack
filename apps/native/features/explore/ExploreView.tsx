@@ -1,14 +1,20 @@
-import { Image, Platform, StyleSheet } from 'react-native';
+import { Image, Platform } from 'react-native';
+import { useStyles } from 'react-native-unistyles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { Heading } from '@typography/Heading';
+import { Heading } from '@typography/Heading/Heading';
+import { Text } from '@typography/Text';
+import { TextMono } from '@typography/TextMono';
+import { TextSans } from '@typography/TextSans';
 import { Collapsible } from '@ui/Collapsible';
 import { Link } from '@ui/Link';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
-import { Text } from '@ui/Text';
 import { ThemedView } from '@ui/ThemedView';
 
+import styleSheet from './Explore.css';
+
 export function ExploreView() {
+  const { styles } = useStyles(styleSheet);
   return (
     <ParallaxScrollView
       headerImage={
@@ -19,32 +25,36 @@ export function ExploreView() {
         <Heading type="h2">Explore</Heading>
       </ThemedView>
 
-      <Text>This app includes example code to help you get started.</Text>
+      <TextSans>
+        This app includes example code to help you get started.
+      </TextSans>
       <Collapsible title="File-based routing">
         <Text>
           This app has two screens:{' '}
-          <Text weight="bold">app/(tabs)/index.tsx</Text> and{' '}
-          <Text weight="bold">app/(tabs)/explore.tsx</Text>
+          <TextSans face="700Bold">app/(tabs)/index.tsx</TextSans> and{' '}
+          <TextSans face="700Bold">app/(tabs)/explore.tsx</TextSans>
         </Text>
         <Text>
-          The layout file in <Text weight="bold">app/(tabs)/_layout.tsx</Text>{' '}
-          sets up the tab navigator.
+          The layout file in
+          <TextSans face="700Bold">app/(tabs)/_layout.tsx</TextSans> sets up the
+          tab navigator.
         </Text>
         <Link href="https://docs.expo.dev/router/introduction">Learn more</Link>
       </Collapsible>
       <Collapsible title="Android, iOS, and web support">
         <Text>
           You can open this project on Android, iOS, and the web. To open the
-          web version, press <Text weight="bold">W</Text> in the terminal
-          running this project.
+          web version, press <TextSans face="700Bold">W</TextSans> in the
+          terminal running this project.
         </Text>
       </Collapsible>
       <Collapsible title="Images">
-        <Text>
-          For static images, you can use the <Text weight="bold">@2x</Text> and{' '}
-          <Text weight="bold">@3x</Text> suffixes to provide files for different
-          screen densities
-        </Text>
+        <TextSans>
+          For static images, you can use the
+          <TextSans face="700Bold">@2x</TextSans> and{' '}
+          <TextSans face="700Bold">@3x</TextSans> suffixes to provide files for
+          different screen densities
+        </TextSans>
         <Image
           source={require('@/assets/images/react-logo.png')}
           style={{ alignSelf: 'center' }}
@@ -53,55 +63,44 @@ export function ExploreView() {
       </Collapsible>
       <Collapsible title="Custom fonts">
         <Text>
-          Open <Text weight="bold">app/_layout.tsx</Text> to see how to load{' '}
-          <Text style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </Text>
+          Open <TextSans face="700Bold">app/_layout.tsx</TextSans> to see how to
+          load <TextMono>custom fonts such as this one.</TextMono>
         </Text>
         <Link href="https://docs.expo.dev/versions/latest/sdk/font">
           Learn more
         </Link>
       </Collapsible>
       <Collapsible title="Light and dark mode components">
-        <Text>
+        <TextSans>
           This template has light and dark mode support. The{' '}
-          <Text weight="bold">useColorScheme()</Text> hook lets you inspect what
-          the user's current color scheme is, and so you can adjust UI colors
-          accordingly.
-        </Text>
+          <TextSans face="700Bold">useColorScheme()</TextSans> hook lets you
+          inspect what the user's current color scheme is, and so you can adjust
+          UI colors accordingly.
+        </TextSans>
         <Link href="https://docs.expo.dev/develop/user-interface/color-themes/">
           Learn more
         </Link>
       </Collapsible>
       <Collapsible title="Animations">
-        <Text>
+        <TextSans>
           This template includes an example of an animated component. The{' '}
-          <Text weight="bold">components/HelloWave.tsx</Text> component uses the
-          powerful <Text weight="bold">react-native-reanimated</Text> library to
+          <TextSans face="700Bold">components/HelloWave.tsx</TextSans> component
+          uses the powerful
+          <TextSans face="700Bold">react-native-reanimated</TextSans> library to
           create a waving hand animation.
-        </Text>
+        </TextSans>
         {Platform.select({
           ios: (
-            <Text>
-              The <Text weight="bold">components/ParallaxScrollView.tsx</Text>{' '}
+            <TextSans>
+              The
+              <TextSans face="700Bold">
+                components/ParallaxScrollView.tsx
+              </TextSans>{' '}
               component provides a parallax effect for the header image.
-            </Text>
+            </TextSans>
           ),
         })}
       </Collapsible>
     </ParallaxScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});

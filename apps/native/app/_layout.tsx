@@ -21,13 +21,13 @@ void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    NunitoBlack: Nunito_900Black,
-    NunitoBold: Nunito_700Bold,
-    NunitoLight: Nunito_300Light,
-    NunitoMedium: Nunito_500Medium,
-    NunitoRegular: Nunito_400Regular,
-    NunitoSemibold: Nunito_600SemiBold,
-    SpaceMono: SpaceMono_400Regular,
+    Nunito_900Black,
+    Nunito_700Bold,
+    Nunito_600SemiBold,
+    Nunito_500Medium,
+    Nunito_400Regular,
+    Nunito_300Light,
+    SpaceMono_400Regular,
   });
 
   useEffect(() => {

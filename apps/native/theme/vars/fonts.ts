@@ -1,20 +1,24 @@
-export const Nunito = {
-  black: 'NunitoBlack',
-  bold: 'NunitoBold',
-  light: 'NunitoLight',
-  medium: 'NunitoMedium',
-  regular: 'NunitoRegular',
-  semibold: 'NunitoSemibold',
+export type Mono = {
+  family: 'SpaceMono';
+  face: '400Regular';
 };
 
-export const SpaceMono = {
-  regular: 'SpaceMono',
+export type Sans = {
+  family: 'Nunito';
+  face:
+    | '900Black'
+    | '700Bold'
+    | '600SemiBold'
+    | '500Medium'
+    | '400Regular'
+    | '300Light';
 };
 
-export const fonts = {
-  Nunito,
-  SpaceMono,
-};
+export type FontFace = Mono | Sans;
+
+export function fontFace(font: FontFace) {
+  return `${font.family}_${font.face}`;
+}
 
 export const fontSizes = {
   h1: 38,
@@ -35,7 +39,10 @@ export const fontWeights = {
   bold: 700,
 } as const;
 
-export function lineHeight(fontSize: number, mod: 'base' | 'md' | 'lg' | 'xl') {
+export function lineHeight(
+  fontSize: number,
+  mod: 'base' | 'md' | 'lg' | 'xl' = 'base'
+) {
   let value = 0.725;
   switch (mod) {
     case 'base':

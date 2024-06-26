@@ -1,13 +1,18 @@
-import { Image, Platform, StyleSheet } from 'react-native';
+import { Image, Platform } from 'react-native';
+import { useStyles } from 'react-native-unistyles';
 
-import { Heading } from '@typography/Heading';
+import { Heading } from '@typography/Heading/Heading';
+import { TextSans } from '@typography/TextSans';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
-import { Text } from '@ui/Text';
 import { ThemedView } from '@ui/ThemedView';
 
 import { HelloWave } from './HelloWave';
 
+import styleSheet from './Home.css';
+
 export function HomeView() {
+  const { styles } = useStyles(styleSheet);
+
   return (
     <ParallaxScrollView
       headerImage={
@@ -23,51 +28,32 @@ export function HomeView() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 1: Try it</Heading>
-        <Text>
-          Edit <Text weight="bold">app/(tabs)/index.tsx</Text> to see changes.
-          Press{' '}
-          <Text weight="bold">
+        <TextSans>
+          Edit <TextSans face="700Bold">app/(tabs)/index.tsx</TextSans> to see
+          changes. Press{' '}
+          <TextSans face="700Bold">
             {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </Text>{' '}
+          </TextSans>{' '}
           to open developer tools.
-        </Text>
+        </TextSans>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 2: Explore</Heading>
-        <Text>
+        <TextSans>
           Tap the Explore tab to learn more about what's included in this
           starter app.
-        </Text>
+        </TextSans>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 3: Get a fresh start</Heading>
-        <Text>
+        <TextSans>
           When you're ready, run{' '}
-          <Text weight="bold">npm run reset-project</Text> to get a fresh{' '}
-          <Text weight="bold">app</Text> directory. This will move the current{' '}
-          <Text weight="bold">app</Text> to{' '}
-          <Text weight="bold">app-example</Text>.
-        </Text>
+          <TextSans face="700Bold">npm run reset-project</TextSans> to get a
+          fresh <TextSans face="700Bold">app</TextSans> directory. This will
+          move the current <TextSans face="700Bold">app</TextSans> to{' '}
+          <TextSans face="700Bold">app-example</TextSans>.
+        </TextSans>
       </ThemedView>
     </ParallaxScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
