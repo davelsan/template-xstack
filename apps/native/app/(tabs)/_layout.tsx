@@ -8,12 +8,14 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function TabsLayout() {
   const { styles, theme } = useStyles(stylesheet);
-  const os = Platform.OS === 'ios' ? 'ios' : 'android';
 
   return (
     <Tabs
       screenOptions={{
-        tabBarStyle: styles[`tabBar_${os}`],
+        tabBarStyle: Platform.select({
+          ios: styles.tabBar_ios,
+          android: styles.tabBar_android,
+        }),
         tabBarActiveTintColor: theme.colors.accentSolid,
         tabBarInactiveTintColor: theme.colors.grayText,
         headerShown: false,
