@@ -1,15 +1,14 @@
 import { forwardRef } from 'react';
 import { Text as RNText, TextProps as RNTextProps } from 'react-native';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import {
+  createStyleSheet,
+  UnistylesVariants,
+  useStyles,
+} from 'react-native-unistyles';
 
 import { Nunito, SpaceMono } from '@theme/vars/fonts';
 
-type Variants = ReturnType<typeof styleSheet>['text']['variants'];
-type StyleVariants = Partial<{
-  [key in keyof Variants]: keyof Variants[key];
-}>;
-
-export type TextProps = RNTextProps & StyleVariants;
+export type TextProps = RNTextProps & UnistylesVariants<typeof styleSheet>;
 
 export const Text = forwardRef<RNText, TextProps>(function TextRef(
   { weight, family, style, ...props },
