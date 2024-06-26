@@ -1,14 +1,5 @@
-import { amber, cyan, jade, mauve, purple, ruby } from '@radix-ui/colors';
+import { lightColors } from './vars/colors';
 import { baseTheme } from './base-theme';
-
-const lightColors = {
-  ...mauve, // gray
-  ...purple, // accent
-  ...ruby, // error
-  ...jade, // success
-  ...amber, // warning
-  ...cyan, // info
-};
 
 const lightTokens = {
   accentBase: lightColors.purple1,

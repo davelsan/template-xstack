@@ -1,17 +1,13 @@
 import { View, type ViewProps } from 'react-native';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { useStyles } from 'react-native-unistyles';
+
+import styleSheet from './ThemedView.css';
 
 export type ThemedViewProps = ViewProps & {
   //
 };
 
 export function ThemedView({ style, ...props }: ThemedViewProps) {
-  const { styles } = useStyles(stylesheet);
+  const { styles } = useStyles(styleSheet);
   return <View style={[styles.view, style]} {...props} />;
 }
-
-const stylesheet = createStyleSheet((theme) => ({
-  view: {
-    backgroundColor: theme.colors.grayBase,
-  },
-}));

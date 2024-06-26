@@ -1,21 +1,5 @@
-import {
-  amberDark,
-  cyanDark,
-  jadeDark,
-  mauveDark,
-  purpleDark,
-  rubyDark,
-} from '@radix-ui/colors';
+import { darkColors } from './vars/colors';
 import { baseTheme } from './base-theme';
-
-const darkColors = {
-  ...mauveDark, // gray
-  ...purpleDark, // accent
-  ...rubyDark, // error
-  ...jadeDark, // success
-  ...amberDark, // warning
-  ...cyanDark, // info
-};
 
 const darkTokens = {
   accentBase: darkColors.purple1,

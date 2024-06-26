@@ -71,7 +71,9 @@ const stylesheet = createStyleSheet((theme) => ({
     height: 90,
   },
   tabBarLabel: {
-    ...theme.typography.caption,
+    fontFamily: theme.fontFace({ family: 'Nunito', face: '400Regular' }),
+    fontSize: theme.fontSizes.body3,
+    lineHeight: theme.lineHeight(theme.fontSizes.body3),
   },
   themeOverrides: {
     backgroundColor: theme.colors.grayBase,

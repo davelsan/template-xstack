@@ -2,9 +2,11 @@ import { Link as ExpoLink } from 'expo-router';
 import { ExpoRouter } from 'expo-router/types/expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
 import { Platform } from 'react-native';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { useStyles } from 'react-native-unistyles';
 
-import { Text } from '../Text';
+import { Text } from '@typography/Text';
+
+import styleSheet from './Link.css';
 
 type ExpoLinkProps<T = string> = ExpoRouter.LinkProps<T>;
 type Href = ExpoLinkProps['href'];
@@ -56,7 +58,7 @@ export function Link<T>({
   onPress,
   ...props
 }: ExpoLinkProps<T>) {
-  const { styles } = useStyles(stylesheet);
+  const { styles } = useStyles(styleSheet);
   const textChildren = typeof children === 'string';
   return (
     <ExpoLink
@@ -69,9 +71,3 @@ export function Link<T>({
     </ExpoLink>
   );
 }
-
-const stylesheet = createStyleSheet((theme) => ({
-  link: {
-    color: theme.colors.infoText,
-  },
-}));
