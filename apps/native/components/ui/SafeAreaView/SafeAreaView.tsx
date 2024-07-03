@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import { StatusBar } from 'expo-status-bar';
 
-import styleSheet from './SafeAreaView.css';
+import styleSheet from './SafeAreaView.styles';
 
 type SafeAreaViewProps = {
   edges?: ('top' | 'right' | 'bottom' | 'left')[];

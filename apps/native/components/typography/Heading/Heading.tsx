@@ -2,7 +2,7 @@ import { useStyles } from 'react-native-unistyles';
 
 import { Text, TextProps } from '../Text';
 
-import styleSheet, { HeadingVariants } from './Heading.css';
+import styleSheet, { HeadingVariants } from './Heading.styles';
 
 type HeadingProps = TextProps & HeadingVariants;
 

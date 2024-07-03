@@ -11,7 +11,7 @@ import { Link } from '@ui/Link';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
 import { ThemedView } from '@ui/ThemedView';
 
-import styleSheet from './Explore.css';
+import styleSheet from './Explore.styles';
 
 export function ExploreView() {
   const { styles } = useStyles(styleSheet);

@@ -7,7 +7,7 @@ import { TextSans } from '@typography/TextSans';
 
 import { ThemedView } from '../ThemedView';
 
-import styleSheet from './Collapsible.css';
+import styleSheet from './Collapsible.styles';
 
 type CollapsibleProps = {
   title: string;

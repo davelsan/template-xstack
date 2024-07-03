@@ -6,7 +6,7 @@ import { useStyles } from 'react-native-unistyles';
 
 import { Text } from '@typography/Text';
 
-import styleSheet from './Link.css';
+import styleSheet from './Link.styles';
 
 type ExpoLinkProps<T = string> = ExpoRouter.LinkProps<T>;
 type Href = ExpoLinkProps['href'];

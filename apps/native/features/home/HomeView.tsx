@@ -7,7 +7,7 @@ import { ParallaxScrollView } from '@ui/ParallaxScrollView';
 import { ThemedView } from '@ui/ThemedView';
 
 import { HelloWave } from './HelloWave';
-import styleSheet from './Home.css';
+import styleSheet from './Home.styles';
 
 export function HomeView() {
   const { styles } = useStyles(styleSheet);

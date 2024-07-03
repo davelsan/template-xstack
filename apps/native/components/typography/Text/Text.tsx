@@ -4,7 +4,7 @@ import { useStyles } from 'react-native-unistyles';
 
 import { FontFace } from '@theme/vars/fonts';
 
-import styleSheet, { TextVariants } from './Text.css';
+import styleSheet, { TextVariants } from './Text.styles';
 
 export type TextBaseProps = RNTextProps & TextVariants;
 

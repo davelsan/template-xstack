@@ -10,7 +10,7 @@ import { useStyles } from 'react-native-unistyles';
 
 import { ThemedView } from '../ThemedView';
 
-import styleSheet from './ParallaxScrollView.css';
+import styleSheet from './ParallaxScrollView.styles';
 
 const HEADER_HEIGHT = 250;
 
