@@ -18,19 +18,22 @@ const config = getDefaultConfig(projectRoot, {
 // Watch all files within the monorepo
 config.watchFolders = [workspaceRoot];
 
-// Let Metro know where to resolve packages and in what order
-config.resolver.nodeModulesPaths = [
-  path.resolve(projectRoot, 'node_modules'),
-  path.resolve(workspaceRoot, 'node_modules'),
-];
+config.transformer = {
+  ...config.transformer,
+  // Support for react-native-svg-transformer
+  babelTransformerPath: require.resolve('react-native-svg-transformer'),
+};
 
-// // Support for react-native-svg-transformer
-// config.transformer.babelTransformerPath = require.resolve(
-//   'react-native-svg-transformer'
-// );
-// config.resolver.assetExts = config.resolver.assetExts.filter(
-//   (ext) => ext !== 'svg'
-// );
-// config.resolver.sourceExts.push('svg');
+config.resolver = {
+  ...config.resolver,
+  // Let Metro know where to resolve packages and in what order
+  nodeModulesPaths: [
+    path.resolve(projectRoot, 'node_modules'),
+    path.resolve(workspaceRoot, 'node_modules'),
+  ],
+  // Support for react-native-svg-transformer
+  assetExts: config.resolver.assetExts.filter((ext) => ext !== 'svg'),
+  sourceExts: [...config.resolver.sourceExts, 'svg'],
+};
 
 module.exports = config;
