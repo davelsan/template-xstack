@@ -38,7 +38,7 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen
-        name="components"
+        name="blocks"
         options={{
           title: 'Blocks',
           tabBarLabelStyle: styles.tabBarLabel,

@@ -25,6 +25,7 @@ export function HomeView() {
         <Heading type="h2">Welcome!</Heading>
         <HelloWave />
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 1: Try it</Heading>
         <TextSans>
@@ -36,6 +37,7 @@ export function HomeView() {
           to open developer tools.
         </TextSans>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 2: Explore</Heading>
         <TextSans>
@@ -43,6 +45,7 @@ export function HomeView() {
           starter app.
         </TextSans>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <Heading type="h3">Step 3: Get a fresh start</Heading>
         <TextSans>
