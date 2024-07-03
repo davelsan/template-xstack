@@ -1,10 +1,15 @@
 import { Tabs } from 'expo-router';
-import React, { type ComponentProps } from 'react';
+import React from 'react';
 import { Platform } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
-import type { IconProps } from '@expo/vector-icons/build/createIconSet';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import {
+  Boxes,
+  House,
+  LucideBarChartHorizontalBig,
+  MonitorSmartphone,
+} from 'lucide-react-native';
+
+import ThreeJS from '@assets/icons/threejs.svg';
 
 export default function TabsLayout() {
   const { styles, theme } = useStyles(stylesheet);
@@ -26,26 +31,52 @@ export default function TabsLayout() {
         options={{
           title: 'Home',
           tabBarLabelStyle: styles.tabBarLabel,
-          header: TabHeader,
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? 'home' : 'home-outline'}
-              color={color}
-            />
+          tabBarIcon: ({ color }) => (
+            <House style={styles.icon} color={color} />
           ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="components"
         options={{
-          title: 'Explore',
+          title: 'Blocks',
           tabBarLabelStyle: styles.tabBarLabel,
-          header: TabHeader,
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? 'code-slash' : 'code-slash-outline'}
-              color={color}
-            />
+          tabBarIcon: ({ color }) => (
+            <Boxes style={styles.icon} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="features"
+        options={{
+          title: 'Features',
+          tabBarLabelStyle: styles.tabBarLabel,
+          tabBarIcon: ({ color }) => (
+            <MonitorSmartphone style={styles.icon} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="charts"
+        options={{
+          title: 'Charts',
+          tabBarLabelStyle: styles.tabBarLabel,
+          tabBarIcon: ({ color }) => (
+            <LucideBarChartHorizontalBig style={styles.icon} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="three"
+        options={{
+          title: 'Three',
+          tabBarLabelStyle: styles.tabBarLabel,
+          tabBarIcon: ({ color }) => (
+            <ThreeJS style={styles.icon} width={22} height={22} color={color} />
           ),
         }}
       />
@@ -53,18 +84,10 @@ export default function TabsLayout() {
   );
 }
 
-function TabHeader() {
-  return <SafeAreaView edges={['top', 'right', 'left']} />;
-}
-
-function TabBarIcon({
-  style,
-  ...rest
-}: IconProps<ComponentProps<typeof Ionicons>['name']>) {
-  return <Ionicons size={28} style={[{ marginBottom: -3 }, style]} {...rest} />;
-}
-
 const stylesheet = createStyleSheet((theme) => ({
+  icon: {
+    marginBottom: -5,
+  },
   tabBar_android: {
     height: 80,
     paddingBottom: theme.spacing.md,
