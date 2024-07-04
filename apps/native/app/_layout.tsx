@@ -11,10 +11,9 @@ import {
   Nunito_900Black,
 } from '@expo-google-fonts/nunito';
 import { SpaceMono_400Regular } from '@expo-google-fonts/space-mono';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 
 import { ThemeProvider } from '@theme/Provider';
-
-import 'react-native-reanimated';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 void SplashScreen.preventAutoHideAsync();
@@ -41,11 +40,13 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <KeyboardProvider navigationBarTranslucent statusBarTranslucent enabled>
+      <ThemeProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </ThemeProvider>
+    </KeyboardProvider>
   );
 }

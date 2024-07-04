@@ -18,7 +18,7 @@ const stylesheet = createStyleSheet((theme) => ({
     borderRadius: 10,
   }),
   text: {
-    fontSize: theme.fontSizes.button,
+    fontSize: theme.fontSizes.menu,
   },
 }));
 
