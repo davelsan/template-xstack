@@ -6,7 +6,7 @@ import stylesheet, { InputLabelVariants } from './InputLabel.styles';
 
 type InputLabelProps = TextProps & InputLabelVariants;
 
-export function InputLabel({ intent, style, ...props }: InputLabelProps) {
-  const { styles } = useStyles(stylesheet, { intent });
+export function InputLabel({ state, style, ...props }: InputLabelProps) {
+  const { styles } = useStyles(stylesheet, { state });
   return <Text style={[styles.label, style]} {...props} />;
 }

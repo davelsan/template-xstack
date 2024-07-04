@@ -9,10 +9,10 @@ import stylesheet, {
 type InputDescriptionProps = TextProps & InputDescriptionVariants;
 
 export function InputDescription({
-  intent,
+  state,
   style,
   ...props
 }: InputDescriptionProps) {
-  const { styles } = useStyles(stylesheet, { intent });
+  const { styles } = useStyles(stylesheet, { state });
   return <Text style={[styles.description, style]} {...props} />;
 }

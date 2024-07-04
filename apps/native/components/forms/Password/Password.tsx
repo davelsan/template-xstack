@@ -1,7 +1,6 @@
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
 import { TextInputProps } from 'react-native';
 
-import { InputDescription } from '../Input/InputDescription';
 import { Input } from '../Input';
 
 type PasswordProps<T extends FieldValues> = {
@@ -24,7 +23,7 @@ export function Password<T extends FieldValues>({
         fieldState: { error },
       }) => (
         <Input>
-          <Input.Label intent={error ? 'error' : undefined}>
+          <Input.Label state={error ? 'error' : undefined}>
             Password
           </Input.Label>
           <Input.Text
@@ -33,12 +32,13 @@ export function Password<T extends FieldValues>({
             onChangeText={onChange}
             onBlur={onBlur}
             secureTextEntry
+            state={error ? 'error' : undefined}
             value={value}
             onSubmitEditing={onSubmitEditing}
           />
-          <InputDescription intent={error ? 'error' : undefined}>
+          <Input.Description state={error ? 'error' : undefined}>
             {error ? error.message : 'Password you used to sign up'}
-          </InputDescription>
+          </Input.Description>
         </Input>
       )}
     />

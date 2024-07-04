@@ -2,21 +2,21 @@ import { TextInput, TextInputProps } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import { forwardRef, useState } from 'react';
 
-import stylesheet from './InputText.styles';
+import stylesheet, { InputTextVariants } from './InputText.styles';
 
-export type InputTextProps = TextInputProps;
+export type InputTextProps = TextInputProps & InputTextVariants;
 
 export const InputText = forwardRef<TextInput, InputTextProps>(
-  function InputTextRef({ onBlur, onFocus, style, ...props }, ref) {
+  function InputTextRef({ onBlur, onFocus, state, style, ...props }, ref) {
     const [focused, setFocused] = useState(false);
     const { styles } = useStyles(stylesheet, {
-      state: focused ? 'focused' : undefined,
+      state,
     });
 
     return (
       <TextInput
         ref={ref}
-        style={[styles.input, style]}
+        style={[styles.input(focused), style]}
         autoCapitalize="none"
         numberOfLines={1}
         onBlur={(e) => {

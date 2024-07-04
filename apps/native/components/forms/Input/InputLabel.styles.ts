@@ -4,7 +4,7 @@ const stylesheet = createStyleSheet((theme) => ({
   label: {
     paddingLeft: theme.spacing.xs,
     variants: {
-      intent: {
+      state: {
         error: {
           color: theme.colors.errorText,
         },

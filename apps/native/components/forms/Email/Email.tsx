@@ -1,6 +1,5 @@
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
 
-import { InputDescription } from '../Input/InputDescription';
 import { Input } from '../Input';
 
 type EmailProps<T extends FieldValues> = {
@@ -18,17 +17,18 @@ export function Email<T extends FieldValues>({ name, control }: EmailProps<T>) {
         fieldState: { error },
       }) => (
         <Input>
-          <Input.Label intent={error ? 'error' : undefined}>Email</Input.Label>
+          <Input.Label state={error && 'error'}>Email</Input.Label>
           <Input.Text
             ref={ref}
             key={name}
             onChangeText={onChange}
             onBlur={onBlur}
+            state={error && 'error'}
             value={value}
           />
-          <InputDescription intent={error ? 'error' : undefined}>
-            {error ? error.message : 'Email address you used to sign up'}
-          </InputDescription>
+          <Input.Description state={error && 'error'}>
+            {error?.message ?? 'Email address you used to sign up'}
+          </Input.Description>
         </Input>
       )}
     />

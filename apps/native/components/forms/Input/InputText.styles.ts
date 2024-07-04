@@ -1,28 +1,24 @@
 import { createStyleSheet, UnistylesVariants } from 'react-native-unistyles';
 
 const stylesheet = createStyleSheet((theme) => ({
-  input: {
+  input: (focused: boolean) => ({
     padding: theme.spacing.md,
     //
-    borderColor: theme.colors.grayText,
+    borderColor: focused ? theme.colors.accentBorder : theme.colors.grayText,
     borderRadius: 10,
     borderWidth: 1,
     //
     color: theme.colors.grayTextContrast,
     fontSize: theme.fontSizes.body1,
+    //
     variants: {
-      intent: {
-        default: {},
-        error: {},
-      },
       state: {
-        default: {},
-        focused: {
-          borderColor: theme.colors.accentBorder,
+        error: {
+          borderColor: theme.colors.errorBorder,
         },
       },
     },
-  },
+  }),
 }));
 
 export type InputTextVariants = UnistylesVariants<typeof stylesheet>;

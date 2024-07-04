@@ -5,7 +5,7 @@ const stylesheet = createStyleSheet((theme) => ({
     color: theme.colors.grayText,
     paddingLeft: theme.spacing.xs,
     variants: {
-      intent: {
+      state: {
         error: {
           color: theme.colors.errorText,
         },
