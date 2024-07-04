@@ -11,6 +11,7 @@
     "ios:build": "eas build --platform ios",
     "lint": "eslint . --fix",
     "format": "prettier --check --write --no-error-on-unmatched-pattern ./**/*.{ts,tsx,md} ./**/*.{ts,tsx,md}",
+    "test": "jest",
     "expo:check": "expo install --check",
     "expo:doctor": "expo-doctor",
     "expo:fix": "expo install --fix",
@@ -20,7 +21,11 @@
     "reset-project": "node ./scripts/reset-project.js"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(?:.pnpm/)?((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg))"
+    ],
+    "setupFiles": ["./jest.setup.js"]
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.2.3",
