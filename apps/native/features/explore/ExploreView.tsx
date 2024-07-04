@@ -2,14 +2,12 @@ import { Image, Platform } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+import { Text, TextMono, TextSans } from '@typography/Text';
 import { Heading } from '@typography/Heading';
-import { Text } from '@typography/Text';
-import { TextMono } from '@typography/TextMono';
-import { TextSans } from '@typography/TextSans';
-import { Collapsible } from '@ui/Collapsible';
-import { Link } from '@ui/Link';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
 import { ThemedView } from '@ui/ThemedView';
+import { Collapsible } from '@ui/Collapsible';
+import { Link } from '@ui/Link';
 
 import styleSheet from './Explore.styles';
 

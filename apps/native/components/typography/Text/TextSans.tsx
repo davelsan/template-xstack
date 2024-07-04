@@ -1,6 +1,6 @@
 import { Sans } from '@theme/vars/fonts';
 
-import { Text, TextBaseProps } from '../Text';
+import { Text, TextBaseProps } from './Text';
 
 type TextSansProps = TextBaseProps & {
   face?: Sans['face'];

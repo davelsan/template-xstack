@@ -2,7 +2,7 @@ import { Image, Platform } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 
 import { Heading } from '@typography/Heading/Heading';
-import { TextSans } from '@typography/TextSans';
+import { TextSans } from '@typography/Text';
 import { ParallaxScrollView } from '@ui/ParallaxScrollView';
 import { ThemedView } from '@ui/ThemedView';
 

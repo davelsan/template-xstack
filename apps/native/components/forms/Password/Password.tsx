@@ -1,8 +1,8 @@
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
 import { TextInputProps } from 'react-native';
 
-import { InputDescription } from '@ui/Input/InputDescription';
-import { Input } from '@ui/Input';
+import { InputDescription } from '../Input/InputDescription';
+import { Input } from '../Input';
 
 type PasswordProps<T extends FieldValues> = {
   name: Path<T>;

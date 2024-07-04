@@ -7,8 +7,8 @@ import { View } from 'react-native';
 import { useEffect } from 'react';
 
 import { Email } from '@forms/Email/Email';
-import { Button } from '@ui/Button/Button';
 import { Password } from '@forms/Password/Password';
+import { Button } from '@ui/Button/Button';
 
 import stylesheet from './Auth.styles';
 

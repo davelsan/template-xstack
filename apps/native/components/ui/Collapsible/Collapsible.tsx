@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { TextSans } from '@typography/TextSans';
+import { TextSans } from '@typography/Text';
 
 import { ThemedView } from '../ThemedView';
 

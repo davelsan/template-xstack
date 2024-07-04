@@ -1,6 +1,6 @@
 import { Mono } from '@theme/vars/fonts';
 
-import { Text, TextBaseProps } from '../Text';
+import { Text, TextBaseProps } from './Text';
 
 type TextMonoProps = TextBaseProps & {
   face?: Mono['face'];
