@@ -8,15 +8,16 @@ import { TextSans } from '@typography/Text';
 import { Link } from '../Link';
 
 export type LinkMenuProps = {
+  href: string;
   icon: LucideIcon;
   text: string;
   title: string;
 };
 
-export function LinkMenu({ icon: Icon, text, title }: LinkMenuProps) {
+export function LinkMenu({ href, icon: Icon, text, title }: LinkMenuProps) {
   const { styles, theme } = useStyles(stylesheet);
   return (
-    <Link href="/blocks/forms" asChild>
+    <Link href={href} asChild>
       <Link.Pressable>
         {({ pressed }) => (
           <View style={styles.container(pressed)}>
