@@ -4,8 +4,7 @@ import {
   Theme as RNTheme,
   ThemeProvider as RNThemeProvider,
 } from '@react-navigation/native';
-
-import { useColorScheme } from '@hooks/useColorScheme';
+import { useColorScheme } from 'react-native';
 
 // This is necessary to initialize the UniStylesRegistry.
 import './themes';
