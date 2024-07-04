@@ -25,8 +25,8 @@ export const fontSizes = {
   h2: 32,
   h3: 25,
   h4: 21,
-  body1: 17,
-  body2: 15,
+  body1: 18,
+  body2: 16,
   body3: 12,
   body4: 9,
   //

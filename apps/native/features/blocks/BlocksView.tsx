@@ -6,7 +6,11 @@ import { LinkMenu } from '@ui/LinkMenu';
 export function BlocksView() {
   return (
     <HeroView title="Blocks" subtitle="App building blocks and components">
-      <LinkMenu icon={ClipboardPen} text="Forms" />
+      <LinkMenu
+        icon={ClipboardPen}
+        title="Form blocks"
+        text="Input components used to compose forms"
+      />
     </HeroView>
   );
 }
