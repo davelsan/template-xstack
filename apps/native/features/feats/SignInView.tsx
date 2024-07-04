@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { Email } from '@forms/Email/Email';
 import { Password } from '@forms/Password/Password';
 import { Button } from '@ui/Button/Button';
+import { SafeAreaView } from '@ui/SafeAreaView';
 
 import stylesheet from './Auth.styles';
 
@@ -26,7 +27,7 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function AuthView() {
+export function SignInView() {
   const { styles } = useStyles(stylesheet);
 
   const { control, handleSubmit, formState, setFocus } = useForm<FormData>({
@@ -40,16 +41,18 @@ export function AuthView() {
   };
 
   return (
-    <KeyboardAvoidingView style={styles.view}>
-      <View style={styles.controls}>
-        <Email name="email" control={control} />
-        <Password
-          name="password"
-          control={control}
-          onSubmitEditing={handleSubmit(onSubmit)}
-        />
-      </View>
-      <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
-    </KeyboardAvoidingView>
+    <SafeAreaView edges={['top']}>
+      <KeyboardAvoidingView style={styles.view}>
+        <View style={styles.controls}>
+          <Email name="email" control={control} />
+          <Password
+            name="password"
+            control={control}
+            onSubmitEditing={handleSubmit(onSubmit)}
+          />
+        </View>
+        <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }

@@ -49,7 +49,7 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen
-        name="features"
+        name="feats"
         options={{
           title: 'Features',
           tabBarLabelStyle: styles.tabBarLabel,
