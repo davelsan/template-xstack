@@ -6,6 +6,7 @@
       "@/*": [ "./*" ],
       "@assets/*": [ "./assets/*" ],
       "@features/*": [ "./features/*" ],
+      "@forms/*": [ "./components/forms/*" ],
       "@helpers/*": [ "./helpers/*" ],
       "@hooks/*": [ "./hooks/*" ],
       "@state/*": [ "./state/*" ],
