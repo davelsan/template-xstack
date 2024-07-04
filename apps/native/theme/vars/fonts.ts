@@ -29,7 +29,9 @@ export const fontSizes = {
   body2: 15,
   body3: 12,
   body4: 9,
-  button: 21,
+  //
+  button: 18,
+  menu: 21,
 };
 
 export const fontWeights = {
