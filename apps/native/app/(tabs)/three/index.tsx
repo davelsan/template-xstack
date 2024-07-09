@@ -1,10 +1,5 @@
-import { SafeAreaView } from '@ui/SafeAreaView/SafeAreaView';
-import { Text } from '@typography/Text';
+import { ThreeView } from '@features/three/ThreeView';
 
 export default function ThreePage() {
-  return (
-    <SafeAreaView edges={['top', 'right', 'left']}>
-      <Text>Three</Text>
-    </SafeAreaView>
-  );
+  return <ThreeView />;
 }

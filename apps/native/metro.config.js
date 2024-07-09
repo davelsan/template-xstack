@@ -32,7 +32,11 @@ config.resolver = {
     path.resolve(workspaceRoot, 'node_modules'),
   ],
   // Support for react-native-svg-transformer
-  assetExts: config.resolver.assetExts.filter((ext) => ext !== 'svg'),
+  assetExts: [
+    ...config.resolver.assetExts.filter((ext) => ext !== 'svg'),
+    'glb',
+    'gltf',
+  ],
   sourceExts: [...config.resolver.sourceExts, 'svg'],
 };
 

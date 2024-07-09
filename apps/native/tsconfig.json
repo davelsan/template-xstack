@@ -3,23 +3,51 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [ "./*" ],
-      "@assets/*": [ "./assets/*" ],
-      "@features/*": [ "./features/*" ],
-      "@forms/*": [ "./components/forms/*" ],
-      "@helpers/*": [ "./helpers/*" ],
-      "@hooks/*": [ "./hooks/*" ],
-      "@state/*": [ "./state/*" ],
-      "@theme/*": [ "./theme/*" ],
-      "@typography/*": [ "./components/typography/*" ],
-      "@ui/*": [ "./components/ui/*" ],
-      "@utils/*": [ "./utils/*" ],
+      "@/*": [
+        "./*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@features/*": [
+        "./features/*"
+      ],
+      "@forms/*": [
+        "./components/forms/*"
+      ],
+      "@helpers/*": [
+        "./helpers/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@shaders/*": [
+        "./shaders/*"
+      ],
+      "@state/*": [
+        "./state/*"
+      ],
+      "@theme/*": [
+        "./theme/*"
+      ],
+      "@typography/*": [
+        "./components/typography/*"
+      ],
+      "@ui/*": [
+        "./components/ui/*"
+      ],
+      "@utils/*": [
+        "./utils/*"
+      ],
+      "@webgl/*": [
+        "./components/webgl/*"
+      ]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts",
+    "expo-env.d.ts"
   ]
 }
