@@ -45,11 +45,7 @@ export function PortalModel(props: GroupProps) {
   const portalDisplacement = useAtomValue(portalDisplacementAtom);
   const portalStrength = useAtomValue(portalStrengthAtom);
 
-  const poleLightMaterial = useMemo(
-    () => new MeshBasicMaterial({ color: '#ff0000' }),
-    []
-  );
-
+  const poleLightMaterial = useMemo(() => new MeshBasicMaterial(), []);
   const portalMaterial = useRef<PortalMaterialRef>(null);
 
   useEffect(() => {
@@ -90,7 +86,6 @@ export function PortalModel(props: GroupProps) {
       />
       <mesh
         geometry={nodes.portalLight.geometry}
-        // material={nodes.portalLight.material}
         position={[0, 0.855, -1.878]}
         rotation={[Math.PI / 2, 0, 0]}
       >
